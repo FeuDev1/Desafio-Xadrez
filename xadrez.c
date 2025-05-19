@@ -1,35 +1,27 @@
 #include <stdio.h>
 
-// -----------------------------
 // Função recursiva para a Torre
-// -----------------------------
 void moverTorre(int casas) {
     if (casas == 0) return;
     printf("Direita\n");
     moverTorre(casas - 1);
 }
 
-// -----------------------------
 // Função recursiva para a Rainha
-// -----------------------------
 void moverRainha(int casas) {
     if (casas == 0) return;
     printf("Esquerda\n");
     moverRainha(casas - 1);
 }
 
-// -----------------------------
 // Função recursiva para o Bispo
-// -----------------------------
 void moverBispoDiagonal(int vertical, int horizontal) {
     if (vertical == 0 || horizontal == 0) return;
     printf("Cima Direita\n");
     moverBispoDiagonal(vertical - 1, horizontal - 1);
 }
 
-// -----------------------------
 // Movimento do Cavalo (2 cima, 1 direita)
-// -----------------------------
 void moverCavaloL() {
     int movimentos = 1; // número de "L" a fazer
 
@@ -51,20 +43,18 @@ void moverCavaloL() {
     }
 }
 
-// -----------------------------
 // Função principal
-// -----------------------------
 int main() {
-    // -----------------------------
+
     // Torre - Recursivo
-    // -----------------------------
+
     int casas_torre = 5;
     printf("Movimento da Torre:\n");
     moverTorre(casas_torre);
 
-    // -----------------------------
+
     // Bispo - Recursivo + Loops Aninhados
-    // -----------------------------
+
     int casas_bispo = 5;
     printf("\nMovimento do Bispo:\n");
     for (int i = 0; i < casas_bispo; i++) {
@@ -73,16 +63,16 @@ int main() {
         }
     }
 
-    // -----------------------------
+
     // Rainha - Recursivo
-    // -----------------------------
+
     int casas_rainha = 8;
     printf("\nMovimento da Rainha:\n");
     moverRainha(casas_rainha);
 
-    // -----------------------------
+
     // Cavalo - Loops Aninhados Complexos
-    // -----------------------------
+
     printf("\n");
     moverCavaloL();
 
